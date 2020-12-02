@@ -1,0 +1,4 @@
+<template>
+    <h1>Booking Page</h1>
+
+</template>
