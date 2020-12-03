@@ -40,7 +40,8 @@
 <style scoped>
     #team {
         width: 100%;
-        height: calc(100vh - 100px);
+        height: calc(100vh - 75px);
+        min-height: 575px;
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/img/team-bg.jpg');
         background-repeat: no-repeat;
         background-size: cover;
@@ -53,7 +54,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: calc(100vh - 100px);
+        height: calc(100% - 100px);
     }
     .white-text{
         color: #fff;

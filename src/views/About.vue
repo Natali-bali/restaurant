@@ -1,22 +1,22 @@
 <template>
-    <div class="wrapper" id="about">
-        <div class="section">
-            <div>
-            <app-section-text
-            :heading = "heading"
-            :strongText = "strongText"
-            :weakText = "weakText"
-            ></app-section-text>
-            </div>
-            <div>
-            <app-section-image
-            :image = "image"
-            ></app-section-image>
+    <div id="about">
+        <div class="wrapper">
+            <div class="section">
+                <div>
+                    <app-section-text
+                    :heading = "heading"
+                    :strongText = "strongText"
+                    :weakText = "weakText"
+                    ></app-section-text>
+                </div>
+                <div>
+                    <app-section-image
+                    :image = "image"
+                    ></app-section-image>
+                </div>
             </div>
         </div>
-
     </div>
-
 </template>
 <script>
     import appSectionText from '../components/SectionText.vue';
@@ -45,6 +45,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: calc(100vh - 100px);
+        height: calc(100vh - 75px);
+        min-height: 575px;
     }
 </style>

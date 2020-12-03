@@ -15,17 +15,16 @@
 </template>
 <script>
 export default {
-    created () {
-        window.addEventListener('scroll', this.handleScroll);
-    },
-//   destroyed () {
-//     window.removeEventListener('scroll', this.handleScroll);
-//   },
-    methods: {
-        handleScroll (event) {
-        console.log(event);
-    }
-  }
+//     created () {
+//         window.addEventListener('scroll', this.handleScroll);
+//     },
+// //   destroyed () {
+// //     window.removeEventListener('scroll', this.handleScroll);
+// //   },
+//     methods: {
+//         handleScroll (event) {
+//     }
+//   }
 }
 </script>
 <style scoped>

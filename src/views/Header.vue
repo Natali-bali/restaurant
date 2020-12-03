@@ -159,7 +159,7 @@ header {
     text-align: center;
 }
 .header-content__naming h1 {
-    font-family: sans-serif;
+    font-family: Banny, Arial, sans-serif;
     font-weight: normal;
     font-size: 96px;
     text-align: center;

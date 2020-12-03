@@ -1,7 +1,7 @@
 <template>
     <div class="section__wrapper">
         <div class="image">
-            <img :src = "image" alt = "image">
+            <img src = "../assets/img/about-img.jpg" alt = "image">
         </div>
     </div>
 </template>
