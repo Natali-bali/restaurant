@@ -1,39 +1,58 @@
 <template>
-    <nav>
-        <router-link to = "Home" id = "home" class = "nav-link">Home</router-link>
-        <router-link to = "About" id = "about" class = "nav-link">About</router-link>
-        <router-link to = "Team" id = "team" class = "nav-link">Team</router-link>
-        <router-link to = "Booking" id = "booking" class = "nav-link">Booking</router-link>
-        <router-link to = "Home" id = "home" class = "nav-logo">
+    <nav id = "navbar">
+        <div class="nav__wrapper">
+        <router-link to = "Home" class = "nav-link">Home</router-link>
+        <router-link to = "About" class = "nav-link">About</router-link>
+        <router-link to = "Team" class = "nav-link">Team</router-link>
+        <router-link to = "Booking" class = "nav-link">Booking</router-link>
+        <router-link to = "Home" class = "nav-logo">
             <img src = "../assets/icons/logo.svg">
         </router-link>
-        <router-link to = "Menu" id = "menu" class = "nav-link">Menu</router-link>
-        <router-link to = "Galerie" id = "galerie" class = "nav-link">Galerie</router-link>
-        <router-link to = "Events" id = "events" class = "nav-link">Events</router-link>
-        <router-link to = "Contact" id = "contact" class = "nav-link">Contact</router-link>
+        <router-link to = "Menu" class = "nav-link">Menu</router-link>
+        <router-link to = "Galerie" class = "nav-link">Galerie</router-link>
+        <router-link to = "Events" class = "nav-link">Events</router-link>
+        <router-link to = "Contact" class = "nav-link">Contact</router-link>
+        </div>
     </nav>
 </template>
 <script>
 export default {
-//     created () {
-//         window.addEventListener('scroll', this.handleScroll);
-//     },
-// //   destroyed () {
-// //     window.removeEventListener('scroll', this.handleScroll);
-// //   },
-//     methods: {
-//         handleScroll (event) {
-//     }
-//   }
+    created () {
+         document.addEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        handleScroll () {
+            let navbar = document.querySelector('#navbar');
+            let windowHeight = window.innerHeight;
+            window.scrollY >= windowHeight - 100 ?
+            navbar.classList.add('fixed') :
+            navbar.classList.remove('fixed');
+        }
+    }
 }
+
 </script>
 <style scoped>
     nav {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+        width: 100%;
+        height: 100px;
+        z-index: 20;
+        transition: .4s;
+    }
+    .nav__wrapper {
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .fixed {
+        position: fixed;
+        height: 50px;
+        background-color:rgba(0, 0, 0, 0.7);
+        transition: .4s;
     }
     .nav-link {
         display: inline-flex;
@@ -46,14 +65,35 @@ export default {
         color: #FFFFFF;
         justify-content: center;
         align-items: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .fixed .nav-link {
+        height: 50px;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: none;
+    }
+    .fixed .nav-link:last-child {
+        border-right: none;
     }
     .nav-logo {
-        margin-right: 35px;
-        margin-left: 35px;
+        margin-right: auto;
+        margin-left: auto;
         width: 150px;
         height: 150px;
         cursor: pointer;
+    }
+.fixed .nav-logo{
+        margin-right: auto;
+        margin-left: auto;
+        align-content: center;
+        display: flex;
+        /* 85 */
+    }
+    .fixed .nav-logo img{
+        width: 50px;
+        height: 50px;
+        margin-right: auto;
+        margin-left: auto;
     }
     .nav-logo img {
         margin-top: 50px;

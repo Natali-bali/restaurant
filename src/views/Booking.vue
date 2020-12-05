@@ -16,7 +16,7 @@
     </div>
 </template>
 <script>
-    import appSectionForm from '../components/SectionForm.vue';
+    import appSectionForm from '../components/Section Form/SectionForm.vue';
     import appSectionImage from '../components/SectionImage.vue';
     export default {
         components: {

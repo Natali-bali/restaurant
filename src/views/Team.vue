@@ -13,6 +13,7 @@
                     :heading = "heading"
                     :strongText = "strongText"
                     :weakText = "weakText"
+                    :width = "width"
                     ></app-section-text>
                 </div>
             </div>
@@ -32,7 +33,8 @@
                 heading: 'MASTER CHEF',
                 strongText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.',
                 weakText: 'Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.',
-                image: './../assets/img/team-img.jpg'
+                image: './../assets/img/team-img.jpg',
+                width: '600px'
             }
         }
     }

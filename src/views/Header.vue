@@ -1,7 +1,8 @@
 <template>
     <header>
+        <navigation-app></navigation-app>
         <div class="wrapper">
-            <navigation-app></navigation-app>
+
             <div class="header-content__wrap">
                 <div class="opening">
                     <div class="opening__text">

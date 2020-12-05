@@ -1,5 +1,5 @@
 <template>
-    <div class="section__wrapper">
+    <div class="section__wrapper" v-bind:style = "{maxWidth: width}">
         <h2>{{heading}}</h2>
         <p><strong>{{strongText}}</strong></p>
         <p>{{weakText}}</p>
@@ -11,13 +11,15 @@ export default {
     props: [
         'heading',
         'strongText',
-        'weakText'
+        'weakText',
+        'width'
     ],
 }
 </script>
 <style scoped>
     .section__wrapper {
-        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
     h2 {
         font-family: Banny, sans-serif;

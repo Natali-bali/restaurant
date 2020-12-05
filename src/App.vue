@@ -3,9 +3,8 @@
           <about-app></about-app>
           <team-app></team-app>
           <booking-app></booking-app>
-          <br>
-          <h1>FORM</h1>
-          <form-app></form-app>
+          <contact-app></contact-app>
+
 </template>
 
 <script>
@@ -13,14 +12,15 @@
   import aboutApp from './views/About';
   import teamApp from './views/Team';
   import bookingApp from './views/Booking';
-  import formApp from './components/Form';
+  import contactApp from './views/Contact';
+
   export default {
       components: {
           headerApp,
           aboutApp,
           teamApp,
           bookingApp,
-          formApp
+          contactApp
       }
   }
 </script>
