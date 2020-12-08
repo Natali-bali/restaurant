@@ -25,6 +25,14 @@
   }
 </script>
 <style>
+/* FONT
+================================================== */
+@font-face {
+  font-family: 'Banny';
+  src: url('./assets/fonts/Banny-BoldRound.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   box-sizing: border-box;
   margin: 0;

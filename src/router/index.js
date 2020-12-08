@@ -12,9 +12,11 @@ const routes = [
   {path: '/',
     name: 'Home',
     component: Home},
-  {path: '/about',
+  {path: '/',
     name: 'About',
-    component: About},
+    hash: 'about',
+    component: About
+  },
   {path: '/team',
    name: 'Team',
    component: Team},
@@ -33,11 +35,22 @@ const routes = [
   {path: '/contact',
    name: 'Contact',
    component: Contact},
-]
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  scrollBehavior: function (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash) {
+      return {selector: to.hash}
+      }
+    else {
+      return { left: 0, top: 0}}
+  },
 })
+
 
 export default router

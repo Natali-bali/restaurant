@@ -1,11 +1,11 @@
 <template>
     <nav id = "navbar">
         <div class="nav__wrapper">
-        <router-link to = "Home" class = "nav-link">Home</router-link>
-        <router-link to = "About" class = "nav-link">About</router-link>
+        <router-link to = "/" class = "nav-link">Home</router-link>
+        <router-link :to = "{name: 'About', hash: '#about'}" class = "nav-link">About</router-link>
         <router-link to = "Team" class = "nav-link">Team</router-link>
         <router-link to = "Booking" class = "nav-link">Booking</router-link>
-        <router-link to = "Home" class = "nav-logo">
+        <router-link to = "/" class = "nav-logo">
             <img src = "../assets/icons/logo.svg">
         </router-link>
         <router-link to = "Menu" class = "nav-link">Menu</router-link>

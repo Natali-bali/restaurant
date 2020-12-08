@@ -23,6 +23,7 @@
     import appSectionText from '../components/SectionText.vue';
     import appSectionImage from '../components/SectionImage.vue';
     export default {
+        hash: 'about',
         components: {
             appSectionText,
             appSectionImage,
