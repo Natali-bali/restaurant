@@ -1,8 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
-import store from './store'
+import sectionView from './components/SectionView.vue'
+
+const app = createApp(App);
+app.component('sectionView', sectionView)
 
 
-
-createApp(App).use(store).use(router).mount('#app')
+app.mount('#app')

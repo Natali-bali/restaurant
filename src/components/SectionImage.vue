@@ -1,7 +1,7 @@
 <template>
     <div class="section__wrapper">
         <div class="image">
-            <img src = "../assets/img/about-img.jpg" alt = "image">
+            <img :src = "myImage(image)" alt = "image">
         </div>
     </div>
 </template>
@@ -11,6 +11,11 @@ export default {
     props: [
         'image',
     ],
+    methods: {
+        myImage(image) {
+            return require('../assets/img/section-img/'+image)
+        }
+    }
 }
 </script>
 <style scoped>
@@ -23,8 +28,8 @@ export default {
         position: relative;
         margin-left: 20px;
         border-radius: 5px;
-
     }
+    img {border-radius: 5px;}
     .image::before {
         content: '';
         position: absolute;

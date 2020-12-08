@@ -1,24 +1,19 @@
 <template>
-    <div id = "team">
-        <div class="wrapper">
-            <h3>our team</h3>
-            <div class="section">
-                <div>
-                    <app-section-image
-                    :image = "image"
-                    ></app-section-image>
-                </div>
-                <div>
-                    <app-section-text class = "white-text"
-                    :heading = "heading"
-                    :strongText = "strongText"
-                    :weakText = "weakText"
-                    :width = "width"
-                    ></app-section-text>
-                </div>
-            </div>
+    <section-view id = "team" post-title="our team">
+        <div>
+            <app-section-image
+            :image = "image"
+            ></app-section-image>
         </div>
-    </div>
+        <div>
+            <app-section-text class = "white-text"
+            :heading = "heading"
+            :strongText = "strongText"
+            :weakText = "weakText"
+            :width = "width"
+            ></app-section-text>
+        </div>
+    </section-view>
 </template>
 <script>
     import appSectionText from '../components/SectionText.vue';
@@ -33,7 +28,7 @@
                 heading: 'MASTER CHEF',
                 strongText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.',
                 weakText: 'Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.',
-                image: './../assets/img/team-img.jpg',
+                image: 'team-img.jpg',
                 width: '600px'
             }
         }
@@ -48,10 +43,10 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-    .wrapper {
+    /* .wrapper {
         max-width: 1280px;
         margin: 0 auto 0 auto;
-    }
+    } */
     .section {
         display: flex;
         justify-content: space-between;

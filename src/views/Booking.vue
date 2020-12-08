@@ -1,19 +1,14 @@
 <template>
-    <div id = "booking">
-        <div class="wrapper">
-            <div class="section">
+    <section-view id = "booking" post-footer = "Mon - Fri: 8PM - 10PM, Sat - Sun: 8PM - 3AM, Phone: +40 729 131 637/+40 726 458 782">
                 <div>
-                    <app-section-form>
-                    </app-section-form>
+                    <app-section-form></app-section-form>
                 </div>
                 <div>
                     <app-section-image
                     :image = "image"
                     ></app-section-image>
                 </div>
-            </div>
-        </div>
-    </div>
+    </section-view>
 </template>
 <script>
     import appSectionForm from '../components/Section Form/SectionForm.vue';
@@ -25,30 +20,12 @@
         },
         data() {
             return {
-                image: './../assets/img/book-img.jpg',
+                image: 'book-img.jpg',
             }
         }
     }
 </script>
 <style scoped>
-    #team {
-        width: 100%;
-        height: calc(100vh - 75px);
-        min-height: 675px;
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/img/team-bg.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .wrapper {
-        max-width: 1280px;
-        margin: 0 auto 0 auto;
-    }
-    .section {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: calc(100vh - 75px);
-    }
     .white-text{
         color: #fff;
     }

@@ -1,21 +1,15 @@
 <template>
-    <div id="contact">
-        <div class="wrapper">
-            <div class="section">
-                <div>
-                    <app-section-text
-                    :heading = "heading"
-                    :strongText = "strongText"
-                    :weakText = "weakText"
-                    :width = "width"
-                    ></app-section-text>
-                    <app-section-contact></app-section-contact>
-                </div>
-                <div>
-                </div>
-            </div>
+    <section-view id = "contact">
+        <div>
+            <app-section-text
+            :heading = "heading"
+            :strongText = "strongText"
+            :weakText = "weakText"
+            :width = "width"
+            ></app-section-text>
+            <app-section-contact></app-section-contact>
         </div>
-    </div>
+    </section-view>
 </template>
 <script>
     import appSectionText from '../components/SectionText.vue';

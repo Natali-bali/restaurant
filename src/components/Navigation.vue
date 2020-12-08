@@ -1,22 +1,24 @@
 <template>
     <nav id = "navbar">
         <div class="nav__wrapper">
-        <router-link to = "/" class = "nav-link">Home</router-link>
-        <router-link :to = "{name: 'About', hash: '#about'}" class = "nav-link">About</router-link>
-        <router-link to = "Team" class = "nav-link">Team</router-link>
-        <router-link to = "Booking" class = "nav-link">Booking</router-link>
-        <router-link to = "/" class = "nav-logo">
+        <scroll-link href = "#home" class = "nav-link">Home</scroll-link>
+        <scroll-link href = "#about" class = "nav-link">About</scroll-link>
+        <scroll-link href = "#team" class = "nav-link">Team</scroll-link>
+        <scroll-link href = "#booking" class = "nav-link">Booking</scroll-link>
+        <scroll-link href = "#home" class = "nav-logo">
             <img src = "../assets/icons/logo.svg">
-        </router-link>
-        <router-link to = "Menu" class = "nav-link">Menu</router-link>
-        <router-link to = "Galerie" class = "nav-link">Galerie</router-link>
-        <router-link to = "Events" class = "nav-link">Events</router-link>
-        <router-link to = "Contact" class = "nav-link">Contact</router-link>
+        </scroll-link>
+        <scroll-link href = "#menu" class = "nav-link">Menu</scroll-link>
+        <scroll-link href = "#galerie" class = "nav-link">Galerie</scroll-link>
+        <scroll-link href = "#events" class = "nav-link">Events</scroll-link>
+        <scroll-link href = "#contact" class = "nav-link">Contact</scroll-link>
         </div>
     </nav>
 </template>
 <script>
+import ScrollLink from './ScrollLink.vue';
 export default {
+  components: { ScrollLink },
     created () {
          document.addEventListener('scroll', this.handleScroll);
     },

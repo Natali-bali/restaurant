@@ -3,8 +3,8 @@
           <about-app></about-app>
           <team-app></team-app>
           <booking-app></booking-app>
+          <galerie-app></galerie-app>
           <contact-app></contact-app>
-
 </template>
 
 <script>
@@ -12,6 +12,7 @@
   import aboutApp from './views/About';
   import teamApp from './views/Team';
   import bookingApp from './views/Booking';
+  import galerieApp from './views/Galerie';
   import contactApp from './views/Contact';
 
   export default {
@@ -20,7 +21,8 @@
           aboutApp,
           teamApp,
           bookingApp,
-          contactApp
+          contactApp,
+          galerieApp,
       }
   }
 </script>

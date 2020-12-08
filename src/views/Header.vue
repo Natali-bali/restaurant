@@ -1,8 +1,7 @@
 <template>
-    <header>
+    <header id= "home">
         <navigation-app></navigation-app>
         <div class="wrapper">
-
             <div class="header-content__wrap">
                 <div class="opening">
                     <div class="opening__text">
@@ -30,7 +29,7 @@
                     <div class="header-content__inner">
                         <div class="header-content__naming">
                             <h6>RESTAURANT</h6>
-                            <h1>hungry people</h1>
+                            <h1 id = "about1">hungry people</h1>
                         </div>
                         <div class="header-content__buttons">
                             <router-link to = "booking" class = "btn-book" >BOOK TABLE</router-link>
