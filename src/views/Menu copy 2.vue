@@ -3,30 +3,36 @@
         <div class="wrapper">
             <div class="section">
                 <h3>Specialties</h3>
-                    <transition :name = "transitionName">
-                        <div class="section_flex" :key="current">
-                                <app-section-image
-                                :image = "dishes[current].image"
-                                ></app-section-image>
-                                <app-section-text class = "white-text"
-                                :heading = "dishes[current].heading"
-                                :strongText = "dishes[current].strongText"
-                                :weakText = "dishes[current].weakText"
-                                :width = "dishes[current].width"
-                                ></app-section-text>
-                        </div>
-                    </transition>
+                    <div v-for="(dish, index) in dishes" :key = "index">
+                        <transition appear>
+                            <div class="section_flex"
+                                v-if = "activeSlide(index)">
+                                <div>
+                                    <app-section-image
+                                    :image = "dish.image"
+                                    ></app-section-image>
+                                </div>
+                                <div>
+                                    <app-section-text class = "white-text"
+                                    :heading = "dish.heading"
+                                    :strongText = "dish.strongText"
+                                    :weakText = "dish.weakText"
+                                    :width = "dish.width"
+                                    ></app-section-text>
+                                </div>
+                            </div>
+                        </transition>
+                    </div>
                     <div class = "dots__wrapper">
                         <div v-for = "(dish, i) in dishes" :key = "i"
                             class = "dot"
                             @click = "changeSlide(i)"
-                            :class = "current==i ? 'active-dot' : 'notactive-dot'"></div>
+                            :class = "indexSlide==i ? 'active-dot' : 'notactive-dot'"></div>
                     </div>
             </div>
         </div>
     </section>
 </template>
-
 <script>
     import appSectionText from '../components/SectionText.vue';
     import appSectionImage from '../components/SectionImage.vue';
@@ -54,39 +60,30 @@
                     image: 'menu-img3.jpg',
                     width: '600px'}
                 ],
-                transitionName: '',
-                show: true,
-                current: 0,
-                noSlides: 0,
+                noSlides: null,
+                indexSlide: 0,
             }
         },
         methods: {
+           activeSlide(index) {
+               return index==this.indexSlide;
+           },
            changeSlide(i) {
-               if (this.current<i){
-                   this.transitionName = 'slide-next';
-                   this.current = i;
-               }
-               else {
-                   this.transitionName = 'slide-prev';
-                   this.current = i;
-               }
-            },
-        }
-            // changeSlideTimeout() {
-            //     if (this.current<3) {
-            //         this.current = this.current+1;
-            //     }
-            //     else this.current = 0;
-            //     console.log(this.current)
-            //     setInterval(this.changeSlideTimeout(), 5000)
-
+               this.indexSlide = i;
+           }
+        },
+        mounted() {
+            this.noSlides = this.dishes.length;
+            // loopSlide = function() {
+            //     for (let n; n<=this.noSlides; n++) {
+            //         setTimeout(function(){
+            //             this.indexSlide=this.indexSlide+1;
+            //         }, 3000);
             // }
+            // }
+            // loopSlide();
 
-//
-        // },
-        // mounted: function mounted (){
-        //     this.changeSlideTimeout()
-        // }
+        }
     }
 </script>
 <style scoped>
@@ -115,9 +112,6 @@
         align-items: center;
         height: 100%;
         width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
     }
     h3 {
         width: 100%;
@@ -162,38 +156,23 @@
     .dot:last-child {
         margin-right: 0;
     }
-    /* GO TO NEXT SLIDE */
+.v-enter{
+    transform: translateX(-200%);
+}
+.v-enter-active {
+    transition: transform 1s ease-in;
+}
+/* .v-enter-to{
+    transform: translateX(0);
+} */
+/* .v-leave{
+    transform: translateX(0);
+} */
+.v-leave-active{
+    transition: transform 1s ease-in;
+}
+.v-leave-to{
+    transform: translateX(100%);
+}
 
-    .slide-next-enter-from {
-        transform: translateX(-150%);
-    }
-    .slide-next-enter-to {
-        transform: translateX(0);
-    }
-    .slide-next-leave-from {
-        transform: translateX(0);
-    }
-    .slide-next-leave-to {
-        transform: translateX(150%);
-    }
-    .slide-next-enter-active,
-    .slide-next-leave-active,
-    .slide-prev-enter-active,
-    .slide-prev-leave-active {
-    transition: transform .7s ease-in-out;
-    }
-
-    /* GO TO PREVIOUS SLIDE*/
-    .slide-prev-enter-from {
-        transform: translateX(150%);
-    }
-    .slide-prev-enter-to {
-        transform: translateX(0);
-    }
-    .slide-prev-leave-from {
-        transform: translateX(0);
-    }
-    .slide-prev-leave-to {
-        transform: translateX(-150%);
-    }
 </style>

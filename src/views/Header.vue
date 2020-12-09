@@ -57,7 +57,7 @@
 header {
     width: 100%;
     height: 100vh;
-    background-image: url('../assets/img/header-bg.jpg');
+    background-image: url('../assets/img/backgrounds/header-bg.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

@@ -14,7 +14,11 @@
         :imgs="imgs"
         :index="index"
         @hide="handleHide"
-        ></vue-easy-lightbox>
+        >
+        <template v-slot:toolbar = "{ toolbarMethods }">
+            <button  style="display:none" @click="toolbarMethods.zoomIn">zoom in</button>
+        </template>
+        </vue-easy-lightbox>
     </section>
 </template>
 

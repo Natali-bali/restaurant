@@ -38,7 +38,7 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: calc(100vh);
+        height: calc(100vh - 75px);
         min-height: 575px;
     }
 

@@ -3,6 +3,7 @@
           <about-app></about-app>
           <team-app></team-app>
           <booking-app></booking-app>
+          <menu-app></menu-app>
           <galerie-app></galerie-app>
           <contact-app></contact-app>
 </template>
@@ -14,6 +15,7 @@
   import bookingApp from './views/Booking';
   import galerieApp from './views/Galerie';
   import contactApp from './views/Contact';
+  import menuApp from './views/Menu';
 
   export default {
       components: {
@@ -23,6 +25,7 @@
           bookingApp,
           contactApp,
           galerieApp,
+          menuApp
       }
   }
 </script>
