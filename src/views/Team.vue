@@ -11,6 +11,7 @@
             :strongText = "strongText"
             :weakText = "weakText"
             :width = "width"
+            :positionSq = "positionSq"
             ></app-section-text>
         </div>
     </section-view>
@@ -29,7 +30,8 @@
                 strongText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.',
                 weakText: 'Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.',
                 image: 'team-img.jpg',
-                width: '600px'
+                width: '600px',
+                positionSq: 'left'
             }
         }
     }

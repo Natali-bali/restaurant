@@ -1,6 +1,7 @@
 <template>
     <div class="section__wrapper">
         <div class="image">
+            <div class="square" :style = "pos"></div>
             <img :src = "myImage(image)" alt = "image">
         </div>
     </div>
@@ -10,9 +11,19 @@
 export default {
     props: [
         'image',
+        'positionSq'
     ],
+    data() {
+        return {
+            pos: 'right: -105px;'
+        }
+    },
     methods: {
         myImage(image) {
+            if (this.positionSq == 'left') {
+                this.pos = 'left: -105px;';
+            }
+
             return require('../assets/img/section-img/'+image)
         }
     }
@@ -30,10 +41,8 @@ export default {
         border-radius: 5px;
     }
     img {border-radius: 5px;}
-    .image::before {
-        content: '';
+    .square {
         position: absolute;
-        right: -125px;
         top: 50%;
         transform: translate(0, -50%);
         width: 210px;

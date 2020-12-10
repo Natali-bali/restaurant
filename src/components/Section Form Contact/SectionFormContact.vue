@@ -63,7 +63,7 @@ export default {
         align-content: center;
     }
     .submit {
-        flex: 0 0 33%;
+        flex: 0 0 50%;
         max-width: 640px;
         height: 60px;
         line-height: 60px;

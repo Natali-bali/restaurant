@@ -1,5 +1,5 @@
 <template>
-    <section-view id = "contact">
+    <section-view id = "contact" post-title="" post-footer = "">
         <div>
             <app-section-text
             :heading = "heading"
@@ -31,17 +31,5 @@
     }
 </script>
 <style scoped>
-    .wrapper {
-        max-width: 1280px;
-        margin: 0 auto 0 auto;
-    }
-    .section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: calc(100vh - 75px);
-        min-height: 700px;
-        flex-wrap: wrap;
-    }
+
 </style>

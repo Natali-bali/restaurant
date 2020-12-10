@@ -54,14 +54,16 @@
                     image: 'menu-img3.jpg',
                     width: '600px'}
                 ],
-                transitionName: '',
+                transitionName: 'slide-next',
                 show: true,
                 current: 0,
                 noSlides: 0,
+                breakInterval: true,
             }
         },
         methods: {
            changeSlide(i) {
+               this.breakInterval = false;
                if (this.current<i){
                    this.transitionName = 'slide-next';
                    this.current = i;
@@ -71,22 +73,22 @@
                    this.current = i;
                }
             },
+            changeSlideTimeout() {
+                const int = setInterval(()=> {
+                    if (this.current < this.dishes.length-1 && this.breakInterval) {
+                        this.current = this.current+1;
+                    }
+                    else if (this.current == this.dishes.length-1 && this.breakInterval) {
+                        this.current = 0;
+                    }
+                    else {
+                        clearInterval(int)}
+                }, 5000)
+            },
+        },
+        mounted: function mounted (){
+            this.changeSlideTimeout()
         }
-            // changeSlideTimeout() {
-            //     if (this.current<3) {
-            //         this.current = this.current+1;
-            //     }
-            //     else this.current = 0;
-            //     console.log(this.current)
-            //     setInterval(this.changeSlideTimeout(), 5000)
-
-            // }
-
-//
-        // },
-        // mounted: function mounted (){
-        //     this.changeSlideTimeout()
-        // }
     }
 </script>
 <style scoped>

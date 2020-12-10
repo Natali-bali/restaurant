@@ -39,8 +39,8 @@ export default {
         justify-content: space-between;
         align-items: center;
         height: calc(100vh - 75px);
-        min-height: 700px;
-        flex-wrap: wrap;
+        min-height: 575px;
+        /* flex-wrap: wrap; */
     }
 
     .section+h3, .footer {

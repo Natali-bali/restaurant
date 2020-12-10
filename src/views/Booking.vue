@@ -26,19 +26,4 @@
     }
 </script>
 <style scoped>
-    .white-text{
-        color: #fff;
-    }
-    h3 {
-        width: 100%;
-        height: 100px;
-        text-align: center;
-        font-weight: 700;
-        font-size: 12px;
-        line-height: 100px;
-        align-items: center;
-        letter-spacing: 0.5em;
-        text-transform: uppercase;
-        color: #FFFFFF;
-    }
 </style>

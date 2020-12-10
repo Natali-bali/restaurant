@@ -6,6 +6,7 @@
             :strongText = "strongText"
             :weakText = "weakText"
             :width = "width"
+            positionSq = ""
             ></app-section-text>
         </div>
         <div>
