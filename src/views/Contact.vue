@@ -41,6 +41,7 @@
         justify-content: center;
         align-items: center;
         height: calc(100vh - 75px);
-        min-height: 575px;
+        min-height: 700px;
+        flex-wrap: wrap;
     }
 </style>

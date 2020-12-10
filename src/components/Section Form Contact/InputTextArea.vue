@@ -1,8 +1,9 @@
 <template>
     <div class="container">
-        <input type="tel"
-        v-model="value" v-bind:style = "{maxWidth: width}" >
-        <label  :for="val" :class = "{activelabel: isActive, defaultlabel: !isActive}">{{val}}</label>
+        <textarea class = "textarea" type="input"
+        v-model="value">
+        </textarea>
+        <label  for="textarea" :class = "{activelabel: isActive, defaultlabel: !isActive}">{{val}}</label>
     </div>
 </template>
 
@@ -16,7 +17,6 @@ export default {
     },
     props: [
         'val',
-        'width'
     ],
     watch: {
         value: function (val) {
@@ -31,26 +31,29 @@ export default {
 
 <style scoped>
     .container {
+        max-width: 1280px;
+        height: 120px;
         position: relative;
-        flex: 0 0 33%;
-        max-width: 640px;
-        height: 60px;
         margin-bottom: 10px;
+        flex: 0 0 100%;
+        max-width: 1280px;
     }
-    .container input[type=tel] {
-        border: none;
-        outline: 0;
-        width: 100%;
+    .textarea {
+        /* width: 100%; */
         height: 100%;
-        background: #E5E5E5;
+        width: 100%;
         border-radius: 5px;
+        border: none;
+        background-color: #E5E5E5;
+        outline: 0;
         color: rgba(51, 51, 51, 0.7);
         font-size: 14px;
         line-height: 60px;
         text-indent: 20px;
         z-index: 11;
     }
-    input[type=tel]:focus {
+
+    .textarea:focus {
         border: 2px solid #E8C300;
     }
     .container label {
@@ -64,7 +67,7 @@ export default {
         z-index: 10;
         cursor: text;
     }
-   input[type=tel]:focus + label{
+   .textarea:focus + label{
         transform: translate(0, -16px) scale(.75);
         color: #E8C300;
     }

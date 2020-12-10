@@ -4,9 +4,9 @@
             <input-text val = "Name" :width = "width" @change="showChange"></input-text>
             <input-text val = "Email" :width = "width" @change="showChange"></input-text>
             <input-tel val = "Phone" :width = "width" @change="showChange"></input-tel>
-            <input-text val = "Message" :width = "textWidth" @change="showChange"></input-text>
+            <input-text-area val = "Message" @change="showChange"></input-text-area>
             <div-contacts></div-contacts>
-            <button type="submit" id="submit" class="submit" @click="submit">book now</button>
+            <button type="submit" id="submit" class="submit" @click="submit">send message</button>
         </div>
     </div>
 </template>
@@ -14,6 +14,7 @@
 <script>
 import inputText from './InputText.vue';
 import inputTel from './InputTel.vue';
+import inputTextArea from './InputTextArea.vue';
 import divContacts from './ContactString.vue'
 export default {
     data() {
@@ -22,21 +23,20 @@ export default {
                           Phone: '',
                           Message: ''
                           },
-                  width: '420px',
-                  textWidth: '1280px'
+                          width: '420px',
 //---- keys must be exactly same as val props (capital letter for design issue)
                 }
     },
 
     methods: {
         submit() {
-            console.log(this.user.Name, this.user.Email, this.user.Date, this.user.Time)
+            console.log(this.contact.Name, this.contact.Email, this.contact.Phone, this.contact.Message)
         },
 //-------send value from input component to parent data
         showChange(event) {
-            for (let key in this.user) {
+            for (let key in this.contact) {
                 if (key == event.target.id) {
-                    this.user[key] = event.target.value;
+                    this.contact[key] = event.target.value;
                 }
             }
         }
@@ -44,6 +44,7 @@ export default {
     components: {
         inputText,
         inputTel,
+        inputTextArea,
         divContacts
     }
 }
@@ -57,12 +58,13 @@ export default {
     .form-group {
         max-width: 1280px;
         display: flex;
-        flex-wrap: wrap;
+        flex-flow: row wrap;
         justify-content: space-between;
         align-content: center;
     }
     .submit {
-        width: 640px;
+        flex: 0 0 33%;
+        max-width: 640px;
         height: 60px;
         line-height: 60px;
         font-size: 12px;

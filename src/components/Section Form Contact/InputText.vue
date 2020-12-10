@@ -32,7 +32,8 @@ export default {
 <style scoped>
     .container {
         position: relative;
-        width: 277px;
+        flex: 0 0 33%;
+        max-width: 420px;
         height: 60px;
         margin-bottom: 10px;
     }

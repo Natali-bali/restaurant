@@ -10,17 +10,17 @@
                 </div>
                 <div class="social">
                     <div class="social__item">
-                        <a href = "#">
+                        <a href = "https://www.facebook.com/">
                             <img src = "../assets/icons/social/facebook.svg">
                         </a>
                     </div>
                     <div class="social__item">
-                        <a href = "#">
+                        <a href = "https://twitter.com/">
                             <img src = "../assets/icons/social/twitter.svg">
                         </a>
                     </div>
                     <div class="social__item">
-                        <a href = "#">
+                        <a href = "https://www.instagram.com/">
                             <img src = "../assets/icons/social/instagram.svg">
                         </a>
                     </div>

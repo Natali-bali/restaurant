@@ -56,6 +56,11 @@
     .image {
         width: 360px;
         height: 360px;
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+    }
+    .image:hover {
+        transform: scale(1.1);
     }
     .image img {
         width: 360px;

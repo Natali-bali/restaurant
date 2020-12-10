@@ -6,6 +6,8 @@
           <menu-app></menu-app>
           <galerie-app></galerie-app>
           <contact-app></contact-app>
+          <map-app></map-app>
+          <footer-app></footer-app>
 </template>
 
 <script>
@@ -16,6 +18,8 @@
   import galerieApp from './views/Galerie';
   import contactApp from './views/Contact';
   import menuApp from './views/Menu';
+  import footerApp from './views/Footer';
+  import mapApp from './views/Map';
 
   export default {
       components: {
@@ -25,7 +29,9 @@
           bookingApp,
           contactApp,
           galerieApp,
-          menuApp
+          menuApp,
+          footerApp,
+          mapApp
       }
   }
 </script>
