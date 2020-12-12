@@ -1,10 +1,10 @@
 <template>
     <section id = "galerie">
         <div class="galerie">
-            <div v-for = "(img, index) in imgs" :key="index"
+            <div v-for = "index in 4" :key="index"
                 @click="showImg(index)"
                 class = "image">
-                <img :src="img" :alt = "img">
+                <img :src="imgs[index-1]" alt = "img">
             </div>
         </div>
         <vue-easy-lightbox
@@ -54,16 +54,12 @@
         overflow: hidden;
     }
     .image {
-        width: 360px;
-        height: 360px;
+        max-width: 360px;
+        min-width: 270px;
         cursor: pointer;
         transition: all 0.2s ease-out;
     }
     .image:hover {
         transform: scale(1.1);
-    }
-    .image img {
-        width: 360px;
-        height: 360px;
     }
 </style>

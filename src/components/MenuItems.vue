@@ -112,7 +112,6 @@ export default {
         text-transform: uppercase;
         cursor: pointer;
     }
-
     .active {
         border-bottom: 1px solid rgba(51, 51, 51, 0.2);
     }
@@ -122,13 +121,10 @@ export default {
     }
     .menu-list_row {
         width: 100%;
-
-        /* margin-right: 77px; */
         display:flex;
         flex-direction: row;
         justify-content:space-between;
         align-items: center;
-
     }
     .menu-list_column {
         min-height: 66px;
@@ -137,10 +133,7 @@ export default {
         padding-left: 10px;
         display:flex;
         flex-wrap: wrap;
-        /* flex-direction: column; */
         justify-content: space-between;
-        /* margin-right: 95px; */
-        /* align-items: flex-start; */
     }
     .item_name, .item_price {
         font-family: Banny;

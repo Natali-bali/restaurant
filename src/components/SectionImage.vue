@@ -1,10 +1,6 @@
 <template>
-    <div class="section__wrapper">
-        <div class="image">
-            <div class="square" :style = "pos"></div>
-            <img :src = "myImage(image)" alt = "image">
-        </div>
-    </div>
+    <img :src = "myImage(image)" :style = "pos" alt = "image">
+    <div class="square"></div>
 </template>
 <script>
 
@@ -15,13 +11,13 @@ export default {
     ],
     data() {
         return {
-            pos: 'right: -105px;'
+            pos: 'right: 8%;'
         }
     },
     methods: {
         myImage(image) {
             if (this.positionSq == 'left') {
-                this.pos = 'left: -105px;';
+                this.pos = 'left: 8%;';
             }
 
             return require('../assets/img/section-img/'+image)
@@ -30,21 +26,13 @@ export default {
 }
 </script>
 <style scoped>
-    .section__wrapper {
-        width: 620px;
-    }
-    .image {
-        width: 475px;
-        height: 475px;
-        position: relative;
-        margin-left: 20px;
-        border-radius: 5px;
-    }
-    img {border-radius: 5px;}
-    .square {
+    img {border-radius: 5px;
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
+    }
+    .square {
+        position: relative;
         width: 210px;
         height: 210px;
         border: 20px solid #E8C300;

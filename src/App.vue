@@ -5,6 +5,7 @@
           <booking-app></booking-app>
           <menu-app></menu-app>
           <menu-list></menu-list>
+          <events-app></events-app>
           <galerie-app></galerie-app>
           <contact-app></contact-app>
           <map-app></map-app>
@@ -22,6 +23,7 @@
   import footerApp from './views/Footer';
   import mapApp from './views/Map';
   import menuList from './views/MenuList';
+  import eventsApp from './views/Events';
 
   export default {
       components: {
@@ -34,7 +36,8 @@
           menuApp,
           footerApp,
           mapApp,
-          menuList
+          menuList,
+          eventsApp
       }
   }
 </script>
@@ -66,5 +69,7 @@ h1, h2, h3, h6 {
     margin: 0;
     padding: 0;
 }
-
+.white-text{
+        color: #fff;
+    }
 </style>

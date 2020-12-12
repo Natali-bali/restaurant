@@ -3,19 +3,20 @@
         <div class="wrapper">
             <div class="section">
                 <h3>Specialties</h3>
-                    <transition :name = "transitionName">
-                        <div class="section_flex" :key="current">
-                                <app-section-image
-                                :image = "dishes[current].image"
-                                ></app-section-image>
-                                <app-section-text class = "white-text"
-                                :heading = "dishes[current].heading"
-                                :strongText = "dishes[current].strongText"
-                                :weakText = "dishes[current].weakText"
-                                :width = "dishes[current].width"
-                                ></app-section-text>
-                        </div>
-                    </transition>
+                <transition :name = "transitionName">
+                    <div class="section_flex" :key="current">
+                            <app-section-image
+                            :image = "dishes[current].image"
+                            positionSq = "left"
+                            ></app-section-image>
+                            <app-section-text class = "white-text"
+                            :heading = "dishes[current].heading"
+                            :strongText = "dishes[current].strongText"
+                            :weakText = "dishes[current].weakText"
+                            :width = "dishes[current].width"
+                            ></app-section-text>
+                    </div>
+                </transition>
                     <div class = "dots__wrapper">
                         <div v-for = "(dish, i) in dishes" :key = "i"
                             class = "dot"
@@ -105,11 +106,13 @@
     }
     .section {
         position: relative;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         height: calc(100vh - 75px);
         min-height: 575px;
+    }
+    /* I dont understand why it set up margines */
+    .section__wrapper {
+        margin-left: 0;
+        margin-right: 0;
     }
     .section_flex {
         display: flex;

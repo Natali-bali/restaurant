@@ -32,14 +32,14 @@
                             <h1 id = "about1">hungry people</h1>
                         </div>
                         <div class="header-content__buttons">
-                            <router-link to = "booking" class = "btn-book" >BOOK TABLE</router-link>
-                            <router-link to = "about" class = "btn-explore">EXPLORE</router-link>
+                            <scroll-link href = "#booking" class = "btn-book" >BOOK TABLE</scroll-link>
+                            <scroll-link href = "#menu" class = "btn-explore">EXPLORE</scroll-link>
                         </div>
                     </div>
                 </div>
-                <router-link to = "about" class = "scroll">
+                <scroll-link href = "#about" class = "scroll">
                     <img src = "../assets/icons/scroll.svg">
-                </router-link>
+                </scroll-link>
             </div>
         </div>
     </header>
@@ -47,9 +47,11 @@
 
 <script>
     import navigationApp from '../components/Navigation';
+    import scrollLink from '../components/ScrollLink'
     export default {
         components: {
-            navigationApp
+            navigationApp,
+            scrollLink
         }
     }
 </script>

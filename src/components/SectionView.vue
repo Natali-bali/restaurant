@@ -1,10 +1,10 @@
 <template>
-    <section :id = "id">
+    <section :id = "id" >
         <div class="wrapper">
             <div class="section">
-                <h3 :class = "{visible: visibleHeader}">{{postTitle}}</h3>
+                <h3 v-if= "visibleHeader">{{postTitle}}</h3>
                 <slot></slot>
-                <div class = "footer" :class = "{visible: visibleFooter}">{{postFooter}}</div>
+                <div class = "footer" v-if = "visibleFooter">{{postFooter}}</div>
             </div>
         </div>
     </section>
@@ -13,7 +13,7 @@
 export default {
     data() {
         return {
-            c: false,
+            visibleHeader: false,
             visibleFooter: false
         }
     },
@@ -38,18 +38,12 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: calc(100vh - 75px);
+        height: calc(100vh - 55px);
         min-height: 575px;
         /* flex-wrap: wrap; */
     }
 
-    .section+h3, .footer {
-        display: none;
-    }
-    .visible {
-        display: block;
-    }
-    h3.visible{
+    h3 {
         width: 100%;
         height: 100px;
         text-align: center;
@@ -63,7 +57,7 @@ export default {
         top: 0;
         left:0;
     }
-    .footer.visible {
+    .footer {
         width: 100%;
         height: 100px;
         text-align: center;

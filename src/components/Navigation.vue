@@ -1,7 +1,7 @@
 <template>
     <nav id = "navbar">
         <div class="nav__wrapper">
-        <scroll-link href = "#home" class = "nav-link">Home</scroll-link>
+        <scroll-link href = "#home" class = "nav-link active">Home</scroll-link>
         <scroll-link href = "#about" class = "nav-link">About</scroll-link>
         <scroll-link href = "#team" class = "nav-link">Team</scroll-link>
         <scroll-link href = "#booking" class = "nav-link">Booking</scroll-link>
@@ -9,8 +9,8 @@
             <img src = "../assets/icons/logo.svg">
         </scroll-link>
         <scroll-link href = "#menu" class = "nav-link">Menu</scroll-link>
-        <scroll-link href = "#galerie" class = "nav-link">Galerie</scroll-link>
         <scroll-link href = "#events" class = "nav-link">Events</scroll-link>
+        <scroll-link href = "#galerie" class = "nav-link">Galerie</scroll-link>
         <scroll-link href = "#contact" class = "nav-link">Contact</scroll-link>
         </div>
     </nav>
@@ -52,8 +52,8 @@ export default {
     }
     .fixed {
         position: fixed;
-        height: 50px;
-        background-color:rgba(0, 0, 0, 0.7);
+        height: 55px;
+        background-color:rgba(0, 0, 0, 0.8);
         transition: .4s;
     }
     .nav-link {
@@ -68,11 +68,23 @@ export default {
         justify-content: center;
         align-items: center;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.2s ease-out;
+    }
+    .nav-link:hover{
+        font-size: 12.5px;
+        color: rgb(255, 255, 255, 0.8);
+    }
+    .active:hover{
+        color: #E8C300;
+        font-size: 12px;
+    }
+    .active {
+        color: #E8C300;
     }
     .fixed .nav-link {
-        height: 50px;
         border-right: 1px solid rgba(255, 255, 255, 0.2);
         border-bottom: none;
+        height: 55px;
     }
     .fixed .nav-link:last-child {
         border-right: none;
@@ -83,6 +95,7 @@ export default {
         width: 150px;
         height: 150px;
         cursor: pointer;
+        transform: translateY(50px);
     }
 .fixed .nav-logo{
         margin-right: auto;
@@ -96,8 +109,5 @@ export default {
         height: 50px;
         margin-right: auto;
         margin-left: auto;
-    }
-    .nav-logo img {
-        margin-top: 50px;
     }
 </style>
