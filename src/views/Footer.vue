@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <div class="footer-app">
         <div class="content">
             © Copyright <strong/>Mindblister<strong/>  2019 template design
         </div>
@@ -14,7 +14,7 @@
     </div>
 </template>
 <style scoped>
-    .footer {
+    .footer-app {
         height: 100px;
         width: 100%;
         display: flex;
@@ -28,5 +28,6 @@
     .content {
         font-size: 12px;
         line-height: 25px;
+        text-align: center;
     }
 </style>

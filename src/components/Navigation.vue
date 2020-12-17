@@ -1,35 +1,53 @@
 <template>
     <nav id = "navbar">
-        <div class="nav__wrapper">
+        <mobile-menu @mobile-active ="mobileChange"></mobile-menu>
+        <div class="nav__wrapper " :class = "mobileMenu ? 'mobile-menu' : 'no-menu'">
         <scroll-link href = "#home" class = "nav-link active">Home</scroll-link>
         <scroll-link href = "#about" class = "nav-link">About</scroll-link>
         <scroll-link href = "#team" class = "nav-link">Team</scroll-link>
         <scroll-link href = "#booking" class = "nav-link">Booking</scroll-link>
-        <scroll-link href = "#home" class = "nav-logo">
+        <div class = "nav-logo">
             <img src = "../assets/icons/logo.svg">
-        </scroll-link>
+        </div>
         <scroll-link href = "#menu" class = "nav-link">Menu</scroll-link>
         <scroll-link href = "#events" class = "nav-link">Events</scroll-link>
         <scroll-link href = "#galerie" class = "nav-link">Galerie</scroll-link>
         <scroll-link href = "#contact" class = "nav-link">Contact</scroll-link>
         </div>
+        <div class = "nav-logo_mobile">
+            <img src = "../assets/icons/logo.svg">
+        </div>
     </nav>
 </template>
 <script>
-import ScrollLink from './ScrollLink.vue';
+import ScrollLink from './ScrollLink';
+import MobileMenu from './MobileMenu'
 export default {
-  components: { ScrollLink },
+    data() {
+        return {
+            mobileMenu: false
+        }
+    },
+    components: {
+      ScrollLink,
+      MobileMenu,
+     },
     created () {
          document.addEventListener('scroll', this.handleScroll);
     },
     methods: {
-        handleScroll () {
+        handleScroll() {
             let navbar = document.querySelector('#navbar');
             let windowHeight = window.innerHeight;
             window.scrollY >= windowHeight - 100 ?
             navbar.classList.add('fixed') :
             navbar.classList.remove('fixed');
+        },
+        mobileChange(val) {
+            this.mobileMenu = val;
         }
+
+
     }
 }
 
@@ -39,7 +57,7 @@ export default {
         width: 100%;
         height: 100px;
         z-index: 20;
-        transition: .4s;
+        transition: all .4s ease-in;
     }
     .nav__wrapper {
         max-width: 1280px;
@@ -49,6 +67,49 @@ export default {
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+    .nav-logo_mobile {
+        display: none;
+    }
+    @media(max-width: 1080px) {
+        nav {
+            height: 55px;
+        }
+        .nav__wrapper {
+            display: none;
+        }
+        .nav__wrapper.mobile-menu {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            right:0;
+            top: 0;
+            z-index: 20;
+        }
+        .nav-logo {
+            display: none;
+        }
+        .nav-logo_mobile {
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        }
+        .nav-logo_mobile img {
+        width: 55px;
+        height: 55px;
+        }
+        .fixed .nav-link .nav-logo_mobile {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        height: 100px;
+        }
+        .no-menu {
+        display: none;
+        }
     }
     .fixed {
         position: fixed;
@@ -97,7 +158,7 @@ export default {
         cursor: pointer;
         transform: translateY(50px);
     }
-.fixed .nav-logo{
+    .fixed .nav-logo{
         margin-right: auto;
         margin-left: auto;
         align-content: center;
@@ -110,4 +171,10 @@ export default {
         margin-right: auto;
         margin-left: auto;
     }
+    .mobile-menu__active {
+        transform: translate(-100%, 0);
+        -ms-transform: translate(-100%, 0);
+        transition: transform 0.2s linear;
+    }
+
 </style>

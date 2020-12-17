@@ -1,6 +1,6 @@
 <template>
     <section-view id = "events" post-title = "private events" post-footer = "For private events please call: +40 729 131 637/+40 726 458 782 or use the contact form.">
-        <div>
+        <div class = "relative">
             <app-section-image
             :image = "image1"
             positionSq = "left"
@@ -9,7 +9,7 @@
             <div class = "weddings_text">weddings</div>
         </div>
         </div>
-        <div>
+        <div class = "relative">
             <app-section-image
             :image = "image2"
             positionSq = "right"
@@ -42,8 +42,9 @@ export default {
         background-repeat: no-repeat;
         background-size: cover;
     }
-    .footer {
-        color: rgba(255, 255, 255, 0.5);
+    .relative {
+        position: relative;
+
     }
     .weddings, .corporate {
         display: block;
@@ -54,20 +55,19 @@ export default {
         line-height: 80px;
         /* or 50% */
         width: 80px;
-        height: 476px;
+        height: 475px;
         position: absolute;
 
     }
     .weddings {
-        left: 498px;
-        top: 101px;
-        border: 0 5px 5px 0;
-        /* z-index: 100; */
+        left: 500px;
+        top: 0;
+        border-radius: 0 5px 5px 0;
     }
     .corporate {
-        right: 498px;
-        top: 101px;
-        border: 5px 0 5px 0;
+        right: 500px;
+        top: 0;
+        border-radius: 5px 0 0 5px;
     }
     .weddings_text {
         text-transform: uppercase;
@@ -85,4 +85,22 @@ export default {
         bottom: 175px;
         left: -158px;
     }
+    @media(max-width: 900px) {
+        .weddings {
+        left: 395px;
+        top: 20px;
+    }
+    .corporate {
+        right: 395px;
+        top: 20px;
+    }
+    }
+     @media(max-width: 414px) {
+          .weddings {
+              display: none;
+    }
+    .corporate {
+        display: none;
+    }
+     }
 </style>

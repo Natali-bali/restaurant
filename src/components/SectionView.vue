@@ -39,8 +39,8 @@ export default {
         justify-content: space-between;
         align-items: center;
         height: calc(100vh - 55px);
-        min-height: 575px;
-        /* flex-wrap: wrap; */
+        min-height: 675px;
+        padding: 0 15px;
     }
 
     h3 {
@@ -68,6 +68,21 @@ export default {
         bottom: 0;
         left:0;
     }
+    @media(max-width: 900px) {
+        .section {
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 15px 20px 15px;
+            margin-top: 30px;
+            height: auto;
+        }
+            h3, .footer {
+            position: relative;
+            height: auto;
+            line-height: 60px;
+        }
+    }
+
 </style>
 
 

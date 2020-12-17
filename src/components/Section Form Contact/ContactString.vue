@@ -12,12 +12,14 @@
         max-width: 640px;
         height: 60px;
         justify-content: space-between;
+        align-items: center;
         padding-right: 20px;
+        flex-wrap: wrap;
     }
     .address div {
         font-weight: bold;
         font-size: 12px;
-        line-height: 60px;
+        line-height: 1;
         color: rgba(51, 51, 51, 0.5);
         text-align: left;
         /* padding-right: 10px; */
@@ -27,5 +29,12 @@
     }
     .fa-envelope {
         margin-right: 0;
+    }
+    @media(max-width:414px) {
+        .address {
+            flex: 0 0 100%;
+            margin-bottom: 15px;
+            margin-top: 5px;
+        }
     }
 </style>

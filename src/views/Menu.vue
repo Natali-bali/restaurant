@@ -107,7 +107,8 @@
     .section {
         position: relative;
         height: calc(100vh - 75px);
-        min-height: 575px;
+        min-height: 675px;
+        padding: 0 15px;
     }
     /* I dont understand why it set up margines */
     .section__wrapper {
@@ -124,6 +125,7 @@
         top: 0;
         left: 0;
     }
+
     h3 {
         width: 100%;
         height: 100px;
@@ -200,5 +202,28 @@
     }
     .slide-prev-leave-to {
         transform: translateX(-150%);
+    }
+    @media(max-width: 900px) {
+        .section_flex {
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin-top: 0;
+            top: 20px;
+            height: 830px;
+        }
+
+        .section {
+            height: 900px;
+
+        }
+        .section__wrapper {
+            /* margin-left: 15px; */
+            margin-right: 15px;
+        }
+        h3 {
+            line-height: 60px;
+        }
     }
 </style>

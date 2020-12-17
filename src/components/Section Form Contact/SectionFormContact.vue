@@ -77,5 +77,9 @@ export default {
         border: none;
         cursor: pointer;
     }
-
+    @media(max-width:414px) {
+        .submit {
+            flex: 0 0 100%;
+        }
+    }
 </style>

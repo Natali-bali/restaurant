@@ -72,4 +72,7 @@ h1, h2, h3, h6 {
 .white-text{
         color: #fff;
     }
+.footer {
+  color: #fff;
+}
 </style>

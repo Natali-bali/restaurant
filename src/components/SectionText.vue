@@ -20,6 +20,7 @@ export default {
     .section__wrapper {
         margin-left: auto;
         margin-right: auto;
+        padding-left: 15px;
     }
     h2 {
         font-family: Banny, sans-serif;
@@ -64,5 +65,10 @@ export default {
     p:last-child{
         margin-top: 20px;
     }
-
+    @media(max-width: 414px) {
+        h2 {
+            font-size: 28px;
+            height: auto;
+        }
+    }
 </style>

@@ -59,6 +59,7 @@
 header {
     width: 100%;
     height: 100vh;
+    min-height: 550px;
     background-image: url('../assets/img/backgrounds/header-bg.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -72,8 +73,15 @@ header {
 }
 .header-content__wrap {
     height: calc(100vh - 100px);
+    min-height: 450px;
     position: relative;
 }
+@media(max-width: 1080px) {
+    .header-content {
+        height: 100%;
+    }
+}
+
 .opening {
     position: absolute;
     /* background-color: rgba(235, 135, 36, 0.192); */
@@ -130,9 +138,9 @@ header {
     border-radius: 50px;
     transform: translate(-50%, -50%);
 }
+
 .header-content {
     width: 850px;
-    /* margin: 0 auto 0 auto; */
     border-left: 1px solid rgba(255, 255, 255, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     height: calc(100vh - 100px);
@@ -190,7 +198,6 @@ header {
     padding: 20px;
     font-weight: bold;
     font-size: 12px;
-    line-height: 1.67;
     border-radius: 5px;
     text-decoration: none;
     color: #fff;
@@ -242,4 +249,63 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+@media(max-width: 1024px) {
+    .opening {
+        height: 100px;
+        width: 100%;
+        left: 0;
+        top: 100px;
+    }
+    .opening__text {
+        width: auto;
+        transform: rotate(0deg);
+    }
+    .social {
+        width: 100%;
+        height: 100px;
+        flex-direction: row;
+        bottom: 100px;
+        right: 0;
+    }
+    .social__item {
+        margin-right: 40px;
+        margin-bottom: 0;
+    }
+    .social__item:last-child {
+        margin-right: 0;
+    }
+    .header-content__naming h1 {
+        font-size: 74px;
+    }
+    .header-content {
+        width: 100%;
+    }
+    .scroll {
+        bottom: 0;
+    }
+}
+@media(max-width: 414px) {
+    .header-content__naming h1 {
+        font-size: 54px;
+    }
+    .header-content__buttons{
+        padding: 0 15px;
+    }
+    .social {
+        padding-top: 20px;
+    }
+}
+@media(max-width: 375px) {
+    .header-content__naming h1 {
+        font-size: 36px;
+    }
+    .btn-book, .btn-explore {
+        height: 40px;
+        line-height: 0;
+    }
+    .social {
+        padding-top: 60px;
+    }
+}
+
 </style>

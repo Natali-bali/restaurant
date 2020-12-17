@@ -31,9 +31,10 @@ export default {
 <style scoped>
     .container {
         position: relative;
-        width: 277px;
+        max-width: 277px;
+        flex: 0 0 50%;
         height: 60px;
-        margin-bottom: 10px;
+        margin: 0 10px 10px 0;
     }
     .container input[type=text] {
         border: none;
@@ -72,5 +73,12 @@ export default {
     }
     .defaultlabel {
         transform: translate(0, 0) scale(1);
+    }
+    @media(max-width: 1188px) {
+        .container {
+            max-width: 100%;
+            flex: 0 0 100%;
+            margin-right: 0;
+        }
     }
 </style>

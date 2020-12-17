@@ -3,8 +3,8 @@
         <div class="galerie">
             <div v-for = "index in 4" :key="index"
                 @click="showImg(index)"
-                class = "image">
-                <img :src="imgs[index-1]" alt = "img">
+                class = "image"
+                :style = "'background-image: url(' + imgs[index-1] + ');'">
             </div>
         </div>
         <vue-easy-lightbox
@@ -51,15 +51,27 @@
         width: 100%;
         margin: 0 auto 0 auto;
         display: flex;
-        overflow: hidden;
     }
     .image {
-        max-width: 360px;
-        min-width: 270px;
+        width: 25%;
         cursor: pointer;
         transition: all 0.2s ease-out;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 0;
+        padding-top: 37.1%;
+        transition: transform 0.2s ease-out;
     }
     .image:hover {
-        transform: scale(1.1);
+        transform: scale(0.95);
+    }
+    @media(max-width: 950px) {
+       .galerie {
+           flex-wrap: wrap;
+        }
+        .image {
+            width: 50%;
+            padding-top: 50%;
+        }
     }
 </style>

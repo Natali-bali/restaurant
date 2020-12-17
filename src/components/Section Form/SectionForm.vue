@@ -63,7 +63,7 @@ export default {
         max-width: 600px;
     }
     .form-group {
-        max-width: 565px;
+        max-width: 575px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -95,7 +95,8 @@ export default {
         border-radius: 50px;
     }
     .submit {
-        width: 563.5px;
+        max-width: 565px;
+        flex: 0 0 100%;
         height: 60px;
         line-height: 60px;
         font-size: 12px;
@@ -107,6 +108,25 @@ export default {
         background-color: #E8C300;
         border: none;
         cursor: pointer;
+    }
+    @media(max-width: 1188px) {
+        /* #submit {
+            margin-left: 0;
+        } */
+        .form-group {
+            justify-content: center;
+
+        }
+
+    }
+    @media(max-width: 768px) {
+        .form-group {
+            margin-left: 0;
+        }
+        #submit {
+            max-width: 100%;
+        }
+
     }
 
 </style>

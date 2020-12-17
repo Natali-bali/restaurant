@@ -9,13 +9,10 @@
             </ul>
         </div>
         <div class="menu-list_wrap">
-            <div class="menu-list_row" v-for = "num in 7" :key = "num">
-                <div class="menu-list_column" v-for = "n in 3" :key = "n">
-                    <div class="item_name">{{menu[menuItem].name}}</div>
-
-                    <div class="item_price">{{menu[menuItem].price}}</div>
-                    <div class="item_desc">{{menu[menuItem].decr}}</div>
-                </div>
+            <div class="menu-list" v-for = "item in menu[menuItem]" :key = "item.name">
+                    <div class="item_name">{{item.name}}</div>
+                    <div class="item_price">{{item.price}}</div>
+                    <div class="item_desc">{{item.decr}}</div>
             </div>
         </div>
     </div>
@@ -24,38 +21,41 @@
 export default {
         data() {
             return {
-                menu : {
-                    soup:{  name: 'SOUP MINESTRONE',
+                // menuDraft: added one name of dish and number to repeat, can be easy replaced by real object
+                // menu created in created, all multiplied. We can easy pass object with real menu
+                menuDraft : {
+                    soup:[{name: 'SOUP MINESTRONE',
                             price: '25,20 USD',
                             decr: 'Integer ullamcorper neque eu purus euismod'
-                            },
-                    pizza:{name: 'PIZZA QUATRO STAGIONI',
+                            }, 10],
+                    pizza:[{name: 'PIZZA QUATRO STAGIONI',
                             price: '55,68 USD',
                             decr: 'Integer ullamcorper neque eu purus euismod'
-                            },
-                    pasta:{name: 'PASTA CARBANARA',
+                            }, 21],
+                    pasta:[{name: 'PASTA CARBANARA',
                             price: '55,68 USD',
                             decr: 'Integer ullamcorper neque eu purus euismod'
-                            },
-                    desert:{name: 'TIRAMISU',
+                            }, 21],
+                    desert:[{name: 'TIRAMISU',
                             price: '15,00 USD',
                             decr: 'Integer ullamcorper neque eu purus euismod'
-                            },
-                    wine:{name: 'SHIRAZ',
+                            }, 14],
+                    wine:[{name: 'SHIRAZ',
                             price: '45,05 USD',
                             decr: 'Integer ullamcorper neque eu purus euismod'
-                            },
-                    beer:{name: 'HENNEKEN',
+                            }, 21],
+                    beer:[{name: 'HENNEKEN',
                             price: '10,68 USD',
                             decr: 'Integer ullamcorper neque eu purus euismod'
-                            },
-                    drinks:{name: 'ORANGE JUICE',
+                            }, 19],
+                    drinks:[{name: 'ORANGE JUICE',
                             price: '5,00 USD',
                             decr: 'Integer ullamcorper neque eu purus euismod'
-                            },
+                            }, 21],
 
                 },
-                menuItem: 'soup',
+                menu: {},
+                menuItem: 'pizza',
             }
         },
         methods: {
@@ -65,13 +65,27 @@ export default {
             activeItem(key) {
                 return key == this.menuItem
             },
+            createMenu() {
+                for (let key in this.menuDraft) {
+                    this.menu[key] = [];
+                    for (let i = 0; i < this.menuDraft[key][1]; i++) {
+                        this.menu[key].push(this.menuDraft[key][0]);
+                    }
+                }
+                 console.log(JSON.stringify(this.menu, null, 4))
+            }
+        },
+        created: function created() {
+            this.createMenu()
         }
 }
 </script>
 <style scoped>
     .wrap {
         width: 100%;
-        height: 535px;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
     .menu-nav_wrap {
        max-width: 840px;
@@ -82,8 +96,6 @@ export default {
         height: 50px;
         position: relative;
         display: flex;
-        /* flex-direction: row; */
-        /* flex: 0 0 100%; */
         justify-content: center;
         align-items: center;
     }
@@ -112,29 +124,43 @@ export default {
         text-transform: uppercase;
         cursor: pointer;
     }
-    .active {
+    .notactive {
         border-bottom: 1px solid rgba(51, 51, 51, 0.2);
     }
+    .active {
+        border-bottom: none;
+    }
     .menu-list_wrap {
-        height: 432px;
+        /* height: 432px; */
         width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
-    .menu-list_row {
-        width: 100%;
-        display:flex;
-        flex-direction: row;
-        justify-content:space-between;
-        align-items: center;
-    }
-    .menu-list_column {
-        min-height: 66px;
-        max-width: 363px;
-        padding-right: 10px;
-        padding-left: 10px;
+
+    .menu-list {
+        width: 378px;
+        height: 66px;
         display:flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
+    @media(max-width: 1325px){
+        .menu-list {
+            padding: 0 15px;
+        }
+    }
+    @media(max-width: 1133px){
+        .menu-list_wrap {
+            justify-content: center;
+        }
+    }
+    @media(max-width: 770px){
+        .menu-nav_wrap ul li {
+            width: 14%;
+        }
+    }
+
     .item_name, .item_price {
         font-family: Banny;
         font-size: 18px;
@@ -150,4 +176,22 @@ export default {
          color: rgba(51, 51, 51, 0.5);
          margin-top: -25px;
     }
+    @media(max-width: 375px){
+        .active, .notactive {
+            font-size: 10px;
+        }
+        .item_name, .item_price {
+            font-size: 12px;
+        }
+        .item_price {
+            padding-left: 10px;
+        }
+        .item_desc {
+            font-size: 12px;
+            line-height: 18px;
+            color: rgba(51, 51, 51, 0.5);
+            margin-top: -25px;
+        }
+    }
 </style>
+755

@@ -75,4 +75,9 @@ export default {
     .defaultlabel {
         transform: translate(0, 0) scale(1);
     }
+    @media(max-width:414px) {
+        .container {
+            flex: 0 0 100%;
+        }
+    }
 </style>
