@@ -51,6 +51,7 @@
         width: 100%;
         margin: 0 auto 0 auto;
         display: flex;
+        height: calc(100vw/4);
     }
     .image {
         width: 25%;

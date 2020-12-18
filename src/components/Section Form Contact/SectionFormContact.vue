@@ -61,6 +61,7 @@ export default {
         flex-flow: row wrap;
         justify-content: space-between;
         align-content: center;
+        margin-top: 50px;
     }
     .submit {
         flex: 0 0 50%;

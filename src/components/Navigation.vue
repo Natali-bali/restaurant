@@ -15,7 +15,7 @@
         <scroll-link href = "#contact" class = "nav-link">Contact</scroll-link>
         </div>
         <div class = "nav-logo_mobile">
-            <img src = "../assets/icons/logo.svg">
+            <img src = "/img/logo.svg">
         </div>
     </nav>
 </template>
@@ -155,7 +155,6 @@ export default {
         margin-left: auto;
         width: 150px;
         height: 150px;
-        cursor: pointer;
         transform: translateY(50px);
     }
     .fixed .nav-logo{
